@@ -1,0 +1,7 @@
+Ejercicio 5 (Opcional, solo para personas internas)
+•
+¿Cómo se llama el proyecto en Azure Devops que contiene los repositorios de proyectos analíticos?
+•
+¿Qué paquetes analíticos considera importante para llevar a cabo una calendarización en Python?
+•
+Mencione de forma general cuál es el paso a paso para realizar una calendarización en Python de inicio hasta que se encuentre en producción.

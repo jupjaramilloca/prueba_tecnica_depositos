@@ -1,0 +1,1 @@
+Liste los elementos o prácticas que debería tener en cuenta al momento de realizar una consulta SQL con el fin de optimizar recursos de cómputo. Realizar este punto en un archivo txt.

@@ -1,0 +1,3 @@
+Ejercicio 1
+	• Explique cuales son los pilares de la programación orientada a objetos.
+	• Cree un proyecto de Python en el cual se pueda evidenciar a través de un ejemplo práctico cómo se aplica la herencia en POO.
