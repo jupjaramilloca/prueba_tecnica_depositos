@@ -1,1 +1,61 @@
-Liste los elementos o prácticas que debería tener en cuenta al momento de realizar una consulta SQL con el fin de optimizar recursos de cómputo. Realizar este punto en un archivo txt.
+Pregunta: 
+
+Liste los elementos o prácticas que debería tener en cuenta al momento de realizar una consulta SQL con el fin de 
+optimizar recursos de cómputo. Realizar este punto en un archivo txt.
+
+Solución: 
+Buenas prácticas para consultas SQL eficientes
+
+1.Evitar SELECT *
+Selecciona solo las columnas necesarias para reducir el volumen de datos procesados.
+
+2.Usar EXPLAIN antes de ejecutar consultas
+Permite analizar el plan de ejecución y estimar el consumo de recursos.
+
+3.Filtrar por particiones
+Siempre especifica las particiones (por ejemplo, year, month, day) para evitar escaneos completos de tablas.
+
+4.Limitar el uso de JOIN
+
+	- Máximo 5 tablas por consulta.
+	- Ordenar de mayor a menor tamaño.
+	- Castear campos STRING a BIGINT si son numéricos.
+
+5.Evitar subconsultas en IN
+Utiliza tablas paramétricas en lugar de subconsultas dentro de IN.
+
+6.Evitar WITH anidados o excesivos
+Máximo 5 WITH por consulta. Si se requieren más, usar tablas temporales.
+
+7.Evitar rangos abiertos en particiones
+Usa valores específicos o rangos controlados para evitar escaneos masivos.
+
+8.Compactar archivos pequeños
+Evita tener archivos menores a 128MB para mejorar el rendimiento.
+
+9.Cerrar sesiones HUE inactivas
+Las sesiones abiertas consumen memoria innecesariamente.
+
+10.Evitar INSERT fila por fila
+Inserta múltiples registros en una sola sentencia.
+
+11.Usar COMPUTE STATS tras crear o modificar tablas
+Mejora la planificación de ejecución de consultas.
+
+12.Evitar CASE WHEN extensos
+Máximo 50 sentencias CASE WHEN por consulta, con 20 condiciones cada una.
+
+13.Usar /* +SHUFFLE */ en joins pesados
+Optimiza el uso de memoria al evitar cargas innecesarias.
+
+14.Evitar subqueries en WHERE
+Reemplazar por JOIN con tablas temporales.
+
+15.Optimizar GROUP BY
+Agrupar desde columnas con menos valores a más valores.
+
+16.Reemplazar LIKE por REGEXP_LIKE
+Mejora el rendimiento en búsquedas de texto.
+
+17.Usar MAX en lugar de RANK cuando sea posible
+Reduce la complejidad de la consulta.
