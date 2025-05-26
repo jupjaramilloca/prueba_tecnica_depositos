@@ -1,7 +1,51 @@
 Ejercicio 5 (Opcional, solo para personas internas)
-•
-¿Cómo se llama el proyecto en Azure Devops que contiene los repositorios de proyectos analíticos?
-•
-¿Qué paquetes analíticos considera importante para llevar a cabo una calendarización en Python?
-•
-Mencione de forma general cuál es el paso a paso para realizar una calendarización en Python de inicio hasta que se encuentre en producción.
+• ¿Cómo se llama el proyecto en Azure Devops que contiene los repositorios de proyectos analíticos?
+
+Respuesta. GrupoBancolombia - Vicepresidencia de innovación y Transformación digital
+
+• ¿Qué paquetes analíticos considera importante para llevar a cabo una calendarización en Python?
+
+
+Respuesta: Orquetador 2, Spark, Helper
+
+
+• Mencione de forma general cuál es el paso a paso para realizar una calendarización en Python de inicio hasta que 
+se encuentre en producción.
+
+1. Preparación del código
+	- Desarrollar la rutina en Python siguiendo las buenas prácticas.
+	- Asegurarse de que el código SQL esté en archivos .sql.
+	- Configurar correctamente el archivo config.json (especialmente el parámetro DSN).
+
+2. Creación de la rama trunk
+	- Crear la rama trunk desde el primer commit de master.
+	- Esta rama está sujeta a políticas estrictas de control por parte del equipo de TI.
+
+3. Pull Request
+	- Crear un Pull Request desde trunk con la descripción detallada de la rutina.
+	- Este PR será revisado por un usuario revisor.
+
+4. Validaciones automáticas (Pipeline)
+
+Se ejecutan automáticamente al crear el PR:
+
+	- Buenas prácticas SQL: evita patrones como SELECT *, INSERT VALUE, subconsultas en IN, etc.
+	- Buenas prácticas Python: análisis estático con Kiuwan.
+	- Pruebas personalizadas: validación de DSN y ubicación del código SQL.
+	- Revisión de logs: cantidad, vigencia y errores.
+
+5. Aprobación o justificación
+	- Si todas las validaciones son exitosas, el PR es aprobado.
+	- Si hay fallas, se deben corregir o justificar (excepciones deben mencionarse en el PR).
+
+6. Despliegue en Artifactory
+	- Se ejecuta el pipeline AW1003001 vitd-despliegue-artifactory-calendarizacion CD.
+	- La versión del paquete se publica en el repositorio oficial
+
+7. Pruebas por la célula TI
+	- Ambiente de desarrollo: instalación y validación de dependencias.
+	- Ambiente de certificación: revisión de requisitos, DOD y matriz de riesgos.
+	- Ambiente de producción:
+		* Ejecución completa de la rutina.
+		* Despliegue en servidor.
+		* Inscripción en Control-M con periodicidad y requisitos.
