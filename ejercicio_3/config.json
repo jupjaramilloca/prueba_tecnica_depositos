@@ -1,0 +1,6 @@
+{
+  "db_path": "database.db",
+  "sql_path": "sql",
+  "log_path": "logs",
+  "ruta_resultado":"resultado_agrupado.txt"
+}
