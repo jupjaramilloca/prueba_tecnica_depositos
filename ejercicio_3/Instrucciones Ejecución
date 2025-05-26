@@ -1,0 +1,21 @@
+# 📂 Ejercicio 3 - Orquestador de Consultas SQL en Python
+
+Este ejercicio ejecuta una serie de pasos definidos en Python que consultan una base de datos SQLite y generan resultados agrupados en un archivo de salida. Toda la lógica está orquestada desde un archivo principal.
+
+---
+
+## ▶️ Ejecución
+
+Para ejecutar este ejercicio debes utilizar el archivo `Pyrun3.bat`.
+
+### ✅ Pasos:
+
+1. Abre una terminal o haz doble clic en `Pyrun3.bat`.
+2. El script ejecutará automáticamente el orquestador definido en `ejecucion.py`.
+
+---
+
+## ⚙️ Configuración
+
+La configuración se realiza desde el archivo `config.json`, que debe estar ubicado en:
+
